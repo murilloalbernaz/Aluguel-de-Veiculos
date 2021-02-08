@@ -1,0 +1,30 @@
+http://localhost:8080/aluguelVeiculos/api/Carro/pesquisa1/5514/SW4/110.0/220.0
+http://localhost:8080/aluguelVeiculos/api/Carro/pesquisa1/5514/110.0/220.0/true/false
+
+?useTimeZone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false
+
+{
+  "placa": "REI6D86",
+  "marca": "TOYOTA",
+  "modelo": "SW4",
+  "anoFabricacao": "2020",
+  "arCondicionado": true,
+  "automatico": true,
+  "disponivel": true,
+  "valor": 200.0,
+  "combustivel": "GASOLINA",
+  "locadora": {"id": 1}
+}
+
+{
+  "id": 1,
+  "dataInicial": "2021-01-02T18:30:49-0300",
+  "dataFinal": "2021-01-05T18:30:49-0300",
+  "carro": {"id": 1},
+  "cliente": {"id": 1},
+  "ativa": false
+}
+
+INSERT INTO LOCADORA VALUES (1,"012341231231", "LOCALIZA_PALMAS",5514)
+
+insert into cliente values (1, "04531674111", "704 sul ala 22 lote 63", "Murillo Henrique Foggia Albernaz", 5514);
