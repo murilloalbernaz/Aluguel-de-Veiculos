@@ -59,5 +59,4 @@ public interface DAO<T extends Cadastro> {
      * @param parametros
      * @return
      */
-    List<T> findWithParameters(List<Parametro> parametros);
 }

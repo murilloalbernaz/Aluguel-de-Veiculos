@@ -14,9 +14,11 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import murillo.albernaz.aluguelveiculos.dao.CarroDao;
 import murillo.albernaz.aluguelveiculos.model.Cadastro;
 import murillo.albernaz.aluguelveiculos.dao.DAO;
 import murillo.albernaz.aluguelveiculos.dao.JpaDAO;
+import murillo.albernaz.aluguelveiculos.model.Carro;
 
 public class Producers {
 
@@ -29,5 +31,10 @@ public class Producers {
         ParameterizedType t = (ParameterizedType) ip.getType();
         Class classe = (Class) t.getActualTypeArguments()[0];
         return new JpaDAO<>(em, classe);
+    }
+    
+    @Produces
+    public CarroDao getcarro(){
+        return new CarroDao(em, Carro.class);
     }
 }
