@@ -5,7 +5,6 @@
  */
 package murillo.albernaz.aluguelveiculos.dao;
 
-import java.util.List;
 import javax.persistence.TypedQuery;
 import murillo.albernaz.aluguelveiculos.model.Cadastro;
 
