@@ -17,21 +17,21 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import murillo.albernaz.aluguelveiculos.dao.DAO;
-import murillo.albernaz.aluguelveiculos.Model.Carro;
+import murillo.albernaz.aluguelveiculos.model.Carro;
 import murillo.albernaz.aluguelveiculos.dao.Parametro;
 /**
  *
  * @author murillo
  */
-@Path("/Carro")
+@Path("/carro")
 @Transactional
-public class CarroRest {
+@Consumes(MediaType.APPLICATION_JSON)
+public class CarroController {
     @Inject 
     private DAO<Carro> dao;
     
     @GET
     @Path("pesquisa1/{cidade}/{modelo}/{precoInicial}/{precoFinal}")
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Carro> findby1(@PathParam("cidade") String cidade,@PathParam("modelo") String modelo, @PathParam("precoInicial") String ini, @PathParam("precoFinal") String fim){
         List<Parametro> p = new ArrayList<>();
         p.add(new Parametro("cidade", cidade));
@@ -43,7 +43,6 @@ public class CarroRest {
     
     @GET
     @Path("pesquisa1/{cidade}/{precoInicial}/{precoFinal}/{arCondicionado}/{automatico}")
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Carro> findby2(@PathParam("cidade") String cidade, @PathParam("precoInicial") String ini, @PathParam("precoFinal") String fim,@PathParam("arCondicionado") String arCondicionado,@PathParam("automatico") String automatico){
         List<Parametro> p = new ArrayList<>();
         p.add(new Parametro("cidade", cidade));
@@ -56,7 +55,6 @@ public class CarroRest {
     
     @GET
     @Path("pesquisa1/{cidade}/{precoInicial}/{precoFinal}/{arCondicionado}/{automatico}/{combustivel}")
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Carro> findby3(@PathParam("cidade") String cidade, @PathParam("precoInicial") String ini, @PathParam("precoFinal") String fim,@PathParam("arCondicionado") String arCondicionado,@PathParam("automatico") String automatico, @PathParam("combustivel") String combustivel){
     List<Parametro> p = new ArrayList<>();
     p.add(new Parametro("cidade", cidade));

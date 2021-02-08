@@ -14,7 +14,7 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import murillo.albernaz.aluguelveiculos.Model.Cadastro;
+import murillo.albernaz.aluguelveiculos.model.Cadastro;
 import murillo.albernaz.aluguelveiculos.dao.DAO;
 import murillo.albernaz.aluguelveiculos.dao.JpaDAO;
 

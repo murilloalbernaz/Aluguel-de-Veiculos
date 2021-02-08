@@ -16,27 +16,26 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import murillo.albernaz.aluguelveiculos.Model.Reserva;
+import murillo.albernaz.aluguelveiculos.model.Reserva;
 import murillo.albernaz.aluguelveiculos.dao.DAO;
 
 /**
  *
  * @author murillo
  */
-@Path("/Reserva")
+@Path("/reserva")
 @Transactional
-public class ReservaRest {
+@Consumes(MediaType.APPLICATION_JSON)
+public class ReservaController {
     @Inject
     private DAO<Reserva> dao;
     
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
     public long insert(Reserva reserva) {
         return dao.save(reserva);
     }
     
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
     public boolean update(Reserva reserva) {
         return dao.save(reserva) > 0;
     }

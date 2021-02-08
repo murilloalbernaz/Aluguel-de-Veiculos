@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package murillo.albernaz.aluguelveiculos.Model;
+package murillo.albernaz.aluguelveiculos.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ public class Reserva implements Cadastro, Serializable{
     private long id;
     private String dataInicial;
     private String dataFinal;
-    private Boolean ativa;
+    private boolean ativa;
     
     @ManyToOne
     private Carro carro;
@@ -31,11 +31,11 @@ public class Reserva implements Cadastro, Serializable{
     @ManyToOne
     private Cliente cliente;
 
-    public Boolean getAtiva() {
+    public boolean getAtiva() {
         return ativa;
     }
 
-    public void setAtiva(Boolean ativa) {
+    public void setAtiva(boolean ativa) {
         this.ativa = ativa;
     }
 

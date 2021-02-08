@@ -12,7 +12,7 @@ package murillo.albernaz.aluguelveiculos.dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import murillo.albernaz.aluguelveiculos.Model.Cadastro;
+import murillo.albernaz.aluguelveiculos.model.Cadastro;
 
 /**
  *
