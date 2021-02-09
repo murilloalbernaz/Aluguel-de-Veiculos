@@ -18,7 +18,7 @@ import murillo.albernaz.aluguelveiculos.dao.CarroDao;
 import murillo.albernaz.aluguelveiculos.model.Cadastro;
 import murillo.albernaz.aluguelveiculos.dao.DAO;
 import murillo.albernaz.aluguelveiculos.dao.JpaDAO;
-import murillo.albernaz.aluguelveiculos.model.Carro;
+import murillo.albernaz.aluguelveiculos.dao.UsuarioDao;
 
 public class Producers {
 
@@ -35,6 +35,11 @@ public class Producers {
     
     @Produces
     public CarroDao getcarro(){
-        return new CarroDao(em, Carro.class);
+        return new CarroDao(em);
+    }
+    
+    @Produces
+    public UsuarioDao getUsuarioDAO(){
+        return new UsuarioDao(em);
     }
 }

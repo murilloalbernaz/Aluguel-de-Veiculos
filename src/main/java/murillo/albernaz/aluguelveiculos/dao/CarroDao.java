@@ -15,11 +15,9 @@ import murillo.albernaz.aluguelveiculos.model.Carro;
  * @author murillo
  */
 public class CarroDao extends JpaDAO<Carro>{
-    private final EntityManager em;
 
-    public CarroDao(EntityManager em, Class<Carro> classe) {
-        super(em, classe);
-        this.em = em;
+    public CarroDao(EntityManager em) {
+        super(em, Carro.class);
     }
 
     

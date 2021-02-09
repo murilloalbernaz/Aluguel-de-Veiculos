@@ -9,7 +9,6 @@ package murillo.albernaz.aluguelveiculos.dao;
  *
  * @author murillo
  */
-import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import murillo.albernaz.aluguelveiculos.model.Cadastro;
@@ -21,7 +20,7 @@ import murillo.albernaz.aluguelveiculos.model.Cadastro;
  */
 public class JpaDAO<T extends Cadastro> implements DAO<T> {
 
-    private final EntityManager em;
+    final EntityManager em;
     private final Class<T> classe;
 
     public JpaDAO(EntityManager em, Class<T> classe) {
@@ -67,4 +66,5 @@ public class JpaDAO<T extends Cadastro> implements DAO<T> {
     public TypedQuery<T> createQuery(String jpql) {
         return em.createQuery(jpql, classe);
     }
+    
 }
